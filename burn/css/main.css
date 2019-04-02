@@ -1476,10 +1476,13 @@ h1, h4 {
   text-indent: 10px; }
 
 .about_us {
-  padding: 80px 0; }
+  padding: 80px 0;
+  line-height: 1.5; }
   .about_us-p {
-    text-indent: 15px;
-    line-height: 1.5; }
+    text-indent: 15px; }
+  .about_us-ul {
+    list-style: circle;
+    margin-left: 30px; }
 
 .team-wrap {
   position: relative;
