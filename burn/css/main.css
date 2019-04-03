@@ -1501,7 +1501,9 @@ canvas {
     width: 50%;
     letter-spacing: 1px;
     margin: 0 auto;
-    text-indent: 15px; }
+    text-indent: 15px;
+    font-style: italic;
+    font-weight: 300; }
 
 .team-wrap {
   position: relative;
