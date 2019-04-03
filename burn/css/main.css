@@ -1465,16 +1465,30 @@ canvas {
   margin: 20px 0; }
   .services-item {
     width: 90%;
-    margin: 0 auto 30px; }
+    padding: 20px;
+    border: 2px solid transparent;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    margin: 0 auto 30px;
+    -webkit-transition: .6s;
+    -o-transition: .6s;
+    transition: .6s; }
+    .services-item:hover {
+      border-color: #CCCCCC; }
+    .services-item:hover svg {
+      -webkit-transform: scale(1.15);
+          -ms-transform: scale(1.15);
+              transform: scale(1.15); }
   .services svg {
     width: 128px;
     height: 128px;
     fill: #000;
     -webkit-transition: .5s;
     -o-transition: .5s;
-    transition: .5s; }
-    .services svg:hover {
-      fill: red; }
+    transition: .5s;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1); }
   .services-text {
     padding-left: 50px;
     letter-spacing: 1px;
