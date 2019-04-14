@@ -555,6 +555,20 @@ template {
       -ms-flex-align: center;
           align-items: center; }
 
+.f-sb-bottom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+
 .f-sb {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1341,20 +1355,13 @@ canvas {
           background-size: cover; }
 
 .top-line {
-  padding-top: 30px; }
+  padding-top: 30px;
+  height: 75px; }
 
 .logo {
-  width: 50px;
-  height: 50px;
-  padding: 3px;
-  margin-right: 30px;
-  background-color: #A3A7AC;
-  -webkit-border-radius: 50%;
-          border-radius: 50%; }
-  .logo span {
-    color: orange; }
-  .logo span:first-child {
-    color: white; }
+  position: relative; }
+  .logo img {
+    width: 100px; }
 
 .nav {
   width: -webkit-calc(89% - 80px);
@@ -1665,7 +1672,7 @@ footer {
     -webkit-transform: translateX(0);
         -ms-transform: translateX(0);
             transform: translateX(0);
-    margin-top: 40px; }
+    margin-top: 20%; }
   .scroll {
     display: none; }
   .main-header {
