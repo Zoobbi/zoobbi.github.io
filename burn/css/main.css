@@ -1353,7 +1353,8 @@ canvas {
   background: -o-linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/main.jpg") #D6DDE5 no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/main.jpg") #D6DDE5 no-repeat;
   -webkit-background-size: cover;
-          background-size: cover; }
+          background-size: cover;
+  background-position: 50% 50%; }
 
 .top-line {
   padding-top: 30px;
