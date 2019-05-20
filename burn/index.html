@@ -12,7 +12,7 @@
 <a href="#up" id ="up-scroll" class="scrollto text-center f15"><img src="img/download-symbol.svg" class="scroll-img" alt="up" title="up"></a>
 <div class="wrapper">
     <main class="main" id="up">
-        <div class="main-section" id="main-section">
+        <div class="main-section parallax-window" data-parallax="scroll" data-image-src="img/main.jpg" id="main-section">
             <div class="content-margin">
                 <header>
                     <div class="top-line f-sb-bottom">
@@ -249,11 +249,12 @@ Außerdem kann Time Keeper für Kundenwünsche angepasst und erweitert werden.--
 </div>
 
 <script src="js/jquery.js"></script>
+<script src="js/parallax.min.js"></script>
 <script>
     // TRANSITION TOOGLE START
     jQuery(document).ready(function() {
         jQuery("a.scrollto").click(function () {
-            elementClick = jQuery(this).attr("href")
+            elementClick = jQuery(this).attr("href");
             destination = jQuery(elementClick).offset().top;
             jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1200);
             return false;
