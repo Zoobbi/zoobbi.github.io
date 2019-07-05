@@ -244,8 +244,25 @@
             });
         });
         // TRANSITION TOOGLE END
+        function height() {
+            var item = document.getElementsByClassName('services-item'),
+                max = 0;
+            console.log(item[1]);
+            for( var i = 0; i <item.length; i++) {
+                console.log(max);
+                if (item[i].clientHeight > max) {
+                    max = item[i].clientHeight;
+                }
+                item[i].style.height  = max +"px";
+                console.log(item[i].style.height);
+            }
+            item[0].style.height = item[2].style.height;
+        }
+        height();
 
-       // $('.parallax-window').parallax({imageSrc: '../img/about_bg.jpg'});
+        window.addEventListener("resize", height);
+
+        // $('.parallax-window').parallax({imageSrc: '../img/about_bg.jpg'});
     </script>
 </body>
 </html>
