@@ -50,16 +50,17 @@
                 </div>
             </div>
         </div>
-       <!-- <div class="down-arrow-wrap">
+       <div class="down-arrow-wrap">
+           <p class="down-arrow_text f20">Mehr erfahren</p>
             <a href="#about_us" class="down-arrow-link f-center scrollto">
                 <img src="img/download-symbol.svg" alt="" width="40px" height="40px">
             </a>
-        </div>-->
+        </div>
     </header>
 
-        <section class="about_us" id="about_us">
+        <section class="parallax-window  about_us" id="about_us">
             <div class="content-margin f-column-center" >
-                <h2 class="uppercase  text-center f20">Über </h2>
+                <h2 class="uppercase  text-center f20">Über</h2>
            <!--   <p class="about_us-p text-center f16">Wir sind Experten in Hard- und Softwareentwicklung im Bereich „asset tracking“, „stock management“, „time management“ und anderen. Unsere Erfahrung erstreckt sich über
             -->        <ul class="f25 services">
                             <a href="#services1" class="services-link" id="services-link1">
@@ -123,7 +124,7 @@
                     <h2 class="f20 text-center uppercase">Video Guide</h2>
                     <div class="guide-content f-g-center">
                         <div class="video">
-                            <iframe width="550px" height="400px" src="https://www.youtube.com/embed/bnEvGPu5UWM" frameborder="0"
+                            <iframe class="guide-iframe" width="550px" height="400px" src="https://www.youtube.com/embed/bnEvGPu5UWM" frameborder="0"
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
                         </div>
@@ -208,7 +209,9 @@
         </div>
     </footer>
     <script src="js/jquery.js"></script>
+    <script src="js/parallax.min.js"></script>
     <script src="js/magnific-popup.min.js"></script>
+
     <script>
         $('#impressum-link').magnificPopup({
             type: 'inline'
@@ -226,13 +229,15 @@
         // TRANSITION TOOGLE START
         jQuery(document).ready(function() {
             jQuery("a.scrollto").click(function () {
-                elementClick = jQuery(this).attr("href")
+                elementClick = jQuery(this).attr("href");
                 destination = jQuery(elementClick).offset().top;
                 jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1200);
                 return false;
             });
         });
         // TRANSITION TOOGLE END
+
+       // $('.parallax-window').parallax({imageSrc: '../img/about_bg.jpg'});
     </script>
 </body>
 </html>
