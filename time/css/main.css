@@ -1119,19 +1119,46 @@ img.mfp-img {
 
 @-webkit-keyframes spin {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
 @keyframes spin {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
   to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: 0deg;
+            transform: 0deg;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  to {
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12); } }
+
+@keyframes pulse {
+  from {
+    -webkit-transform: 0deg;
+            transform: 0deg;
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  to {
+    -webkit-transform: scale(1.12);
+            transform: scale(1.12); } }
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center; }
 
 html {
   font-size: 10px; }
@@ -1167,7 +1194,8 @@ h1 {
   font-size: 7.8rem; }
 
 h2 {
-  color: #F0F0F0; }
+  color: #F0F0F0;
+  letter-spacing: 1.3px; }
 
 h1, h4 {
   margin: 0;
@@ -1221,9 +1249,13 @@ nav {
   display: block;
   color: #7C7C7C;
   font-family: Roboto,sans-serif;
-  padding: 1rem; }
+  padding: 1rem;
+  -webkit-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s; }
   .nav-link:hover {
-    background-color: #D47F06; }
+    background-color: #D47F06;
+    color: #fff; }
 
 .app {
   position: relative;
@@ -1257,6 +1289,13 @@ nav {
     position: absolute;
     bottom: 25px;
     right: 25px; }
+    .app-link:hover {
+      -webkit-animation: pulse 1s infinite linear;
+              animation: pulse 1s infinite linear; }
+
+.down-arrow_text {
+  color: #7C7C7C;
+  text-align: center; }
 
 .down-arrow-wrap {
   position: absolute;
@@ -1264,11 +1303,17 @@ nav {
   left: calc(50% - 20px);
   bottom: 5%; }
 
+.down-arrow-link img {
+  -webkit-animation: pulse 1s infinite linear;
+          animation: pulse 1s infinite linear; }
+
 .content-text {
   color: #7C7C7C; }
 
 .services {
   width: 100%;
+  position: relative;
+  z-index: 5;
   margin: 20px 0; }
   .services-item {
     width: 60%;
@@ -1290,7 +1335,7 @@ nav {
   .services svg {
     width: 128px;
     height: 128px;
-    fill: #7C7C7C;
+    fill: #F0F0F0;
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
@@ -1301,7 +1346,7 @@ nav {
     padding-left: 50px;
     letter-spacing: 1px;
     line-height: 2;
-    color: #7C7C7C; }
+    color: #F0F0F0; }
   .services-modal {
     width: 30%; }
     .services-modal svg {
@@ -1310,11 +1355,42 @@ nav {
       fill: #F0F0F0; }
 
 .about_us {
-  padding: 80px 0;
+  position: relative;
   line-height: 1.5;
-  background-color: #363636;
-  color: #7C7C7C; }
+  padding: 80px 0;
+  background-color: #7C7C7C;
+  color: #F0F0F0;
+  background-image: url(../img/about_bg.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  /*&::after {
+  content: '';
+  background-color: $gray;
+  display: block;
+
+  width: 100%;
+  position: absolute;
+  height: 50px;
+  transform: skewY(-3deg);
+  z-index: 2;
+  bottom: -20px;}*/ }
+  .about_us::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2; }
+  .about_us h2 {
+    position: relative;
+    z-index: 5; }
   .about_us-p {
+    position: relative;
+    z-index: 5;
+    color: #F0F0F0;
     width: 50%;
     letter-spacing: 1px;
     margin: 0 auto;
@@ -1322,13 +1398,16 @@ nav {
     font-style: italic;
     font-weight: 300; }
 
+/*
+
 .delimiter {
   width: 100%;
   height: 3px;
-  background-color: #7C7C7C; }
-
+  background-color: $gray;
+}
+*/
 .guide-content {
-  margin-bottom: 3rem; }
+  margin: 3rem 0; }
 
 .guide-video {
   padding: 80px 0;
@@ -1346,6 +1425,14 @@ nav {
               animation: spin 2s infinite linear; }
   .guide-list__item:not(:last-child) {
     margin-bottom: 2rem; }
+
+.video {
+  border: 2px transparent solid;
+  -webkit-transition: .6s;
+  -o-transition: .6s;
+  transition: .6s; }
+  .video:hover {
+    border: 2px #7C7C7C solid; }
 
 .whell {
   display: block;
