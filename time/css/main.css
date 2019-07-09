@@ -1452,7 +1452,10 @@ canvas {
     left: 0;
     top: 0;
     opacity: .3;
-    background-image: url(../img/time3bg.jpg);
+    -webkit-transition: 0s;
+    -o-transition: 0s;
+    transition: 0s;
+    background-image: url(../img/3bg.jpg);
     background-position: 50% 50%;
     -webkit-background-size: cover;
     background-size: cover; }
