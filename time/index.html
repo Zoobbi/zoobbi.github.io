@@ -324,7 +324,7 @@
         function height() {
             var item = document.getElementsByClassName('services-item'),
                 max = 0;
-            console.log(item[1]);
+          //  console.log(item[1]);
             for( var i = 0; i <item.length; i++) {
                 console.log(max);
                 if (item[i].clientHeight > max) {
@@ -340,6 +340,34 @@
         window.addEventListener("resize", height);
 
         // $('.parallax-window').parallax({imageSrc: '../img/about_bg.jpg'});
+        //BG PHOTO
+    /*    var a = function () {
+            while (1 == 1) {
+                var i = 1;
+
+            }
+        }*/
+
+
+
+            var image_count = 1;
+            setInterval(function () {
+                var bg =  document.querySelector(".header-bg");
+                bg.style.backgroundImage = ' url(../img/time' + image_count + 'bg.jpg)';
+              console.log(image_count);
+
+                image_count++;
+
+                if (image_count > 4) {
+                    image_count = 1;
+                }
+
+            /* for (var i = 1; i <= 4; i++ ) {
+                bg.style.backgroundImage = ' url(../img/time' + i + 'bg.jpg)';*/
+            //  console.log( bg.style.backgroundImage);
+
+        },2000);
+
     </script>
 </body>
 </html>
