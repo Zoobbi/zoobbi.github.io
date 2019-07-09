@@ -1400,7 +1400,6 @@ h1 {
   opacity: 0.7; }
 
 h2 {
-  color: #F0F0F0;
   letter-spacing: 1.3px; }
 
 h1, h4 {
@@ -1436,6 +1435,7 @@ canvas {
   background-color: #363636; }
 
 .top-line {
+  position: relative;
   padding-top: 10px;
   background-color: #FF7712;
   height: 80px; }
@@ -1444,10 +1444,18 @@ canvas {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  min-height: 100vh;
-  background-image: url(../img/time2bg.jpg);
-  -webkit-background-size: cover;
-  background-size: cover; }
+  min-height: 100vh; }
+  .header-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: .3;
+    background-image: url(../img/time3bg.jpg);
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    background-size: cover; }
 
 .logo-img {
   width: 120px; }
@@ -1481,13 +1489,24 @@ nav {
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url(../img/app-teaser.jpg);
+    background-image: url(../img/TimeKeeperSite-teaser-bg.jpg);
     -webkit-background-size: cover;
             background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     color: #7C7C7C;
     opacity: .7; }
+    .app-bg__tel {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url(../img/tel.png);
+      -webkit-background-size: cover;
+              background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center; }
   .app-content {
     position: absolute;
     width: 100%;
@@ -1652,11 +1671,16 @@ nav {
 .guide-content {
   margin: 3rem 0; }
   .guide-content h4 {
-    color: #F0F0F0; }
+    color: #363636; }
 
 .guide-video {
   padding: 80px 0;
-  color: #7C7C7C; }
+  color: #7C7C7C;
+  background-image: url(../img/videobg.png);
+  -webkit-background-size: cover;
+  background-size: cover; }
+  .guide-video h2 {
+    color: #363636; }
 
 .guide-text {
   padding-left: 5rem; }
@@ -1665,7 +1689,7 @@ nav {
   margin-top: 2rem; }
   .guide-list__item {
     position: relative;
-    color: #F0F0F0; }
+    color: #363636; }
     .guide-list__item:hover .whell {
       -webkit-animation: spin 2s infinite linear;
               animation: spin 2s infinite linear; }
