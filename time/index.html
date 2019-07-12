@@ -9,9 +9,20 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    
     <div class="wrapper">
+        <div class="cookies-using-message f16">
+            <div class="content-margin f-sb-center">
+                <span class="cookies-using-text">Этот сайт использует куки-файлы и другие технологии, чтобы помочь вам в навигации, а также предоставить лучший пользовательский опыт, анализировать использование наших продуктов и услуг, повысить качество рекламных и маркетинговых активностей.</span>
+                <button class="cookies-using-btn">Принять</button>
+            </div>
+        </div>
     <header class="header">
-        <div class="header-bg"></div>
+        <div class="header-bg show"></div>
+        <div class="header-bg "></div>
+        <div class="header-bg "></div>
+        <div class="header-bg "></div>
+        <div class="header-opacity"></div>
         <div class="top-line">
             <div class="content-margin f-sb-center">
                 <a href="#">
@@ -288,6 +299,13 @@
     <script src="js/magnific-popup.min.js"></script>
 
     <script>
+
+        var cookie_btn = document.querySelector(".cookies-using-btn");
+        var cur_slide = 0;
+        var bg =  document.querySelectorAll(".header-bg");
+        var check = false;
+        var slider = setInterval(Slide,2000);
+
         $('#impressum-link').magnificPopup({
             type: 'inline'
         });
@@ -326,12 +344,12 @@
                 max = 0;
           //  console.log(item[1]);
             for( var i = 0; i <item.length; i++) {
-                console.log(max);
+
                 if (item[i].clientHeight > max) {
                     max = item[i].clientHeight;
                 }
                 item[i].style.height  = max +"px";
-                console.log(item[i].style.height);
+
             }
             item[0].style.height = item[2].style.height;
         }
@@ -339,29 +357,55 @@
 
         window.addEventListener("resize", height);
 
-        // $('.parallax-window').parallax({imageSrc: '../img/about_bg.jpg'});
-        //BG PHOTO
-    /*    var a = function () {
-            while (1 == 1) {
-                var i = 1;
-
-            }
-        }*/
-
-
-
-            var image_count = 1;
-            setInterval(function () {
-                var bg =  document.querySelector(".header-bg");
-                bg.style.backgroundImage = ' url(img/' + image_count + 'bg.jpg)';
-              console.log(image_count + " S");
-
-                image_count++;
-
-                if (image_count > 4) {
-                    image_count = 1;
+            function Slide() {
+                if (cur_slide == 0) {
+                //    bg[2].classList.remove('right');
                 }
-                },2000);
+                cur_slide++;
+              //  bg[cur_slide].classList.remove('right');
+                bg[cur_slide].classList.add('show');
+                bg[cur_slide-1].classList.remove('show');
+              //  bg[cur_slide-1].classList.add('right');
+                if (cur_slide >= 2) {
+                  //  bg[cur_slide-2].classList.remove('right');
+                }
+              //  bg[cur_slide-1].classList.add('right');
+                if (cur_slide == (bg.length - 1)) {
+                    bg[cur_slide].classList.remove('show');
+
+                    cur_slide = 0;
+                    bg[cur_slide].classList.add('show');
+                }
+            }
+
+
+
+            function nextSlide() {
+                console.log(cur_slide +"  " +check);
+                if (cur_slide == 0 && check == true) {
+                    bg[bg.length - 1].classList.remove('show');
+                    bg[cur_slide].classList.add('show');
+                    cur_slide++;
+                } else if (0 <= cur_slide  && cur_slide< bg.length - 1) {
+
+                        bg[cur_slide+1].classList.add('show');
+                        //  bg[cur_slide].classList.add('right');
+                        bg[cur_slide].classList.remove('show');
+                        check = true;
+                    cur_slide++;
+
+                } else if  (cur_slide == bg.length-1) {
+
+                    console.log(cur_slide );
+                    bg[cur_slide-1].classList.remove('show');
+                    cur_slide = 0;
+
+                }
+            }
+
+        cookie_btn.onclick = function () {
+             document.querySelector(".cookies-using-message").style.display = "none";
+        }
 
     </script>
 </body>
