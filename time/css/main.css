@@ -4268,7 +4268,11 @@ nav {
             flex-direction: column; }
   .app-fire {
     width: 50px;
-    height: 50px; }
+    height: 50px;
+    bottom: 25px;
+    left: 25px;
+    right: 0;
+    top: 0; }
   .app-link {
     width: 180px; }
   .app-text {
@@ -4288,7 +4292,8 @@ nav {
   .app-text {
     width: 70%;
     text-align: center;
-    margin: 0; }
+    margin: 0;
+    margin-left: 15%; }
   .functions-items {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
