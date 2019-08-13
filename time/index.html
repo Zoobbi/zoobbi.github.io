@@ -27,7 +27,21 @@
                 <a href="#">
                     <img class="logo-img" src="img/logo1.svg" alt="">
                 </a>
-                <nav class="uppercase flex f16">
+                <div class="overlay">
+                <nav class="overlayMenu">
+                    <a href="#" class="logo-mobile">
+                        <img class="logo-img" src="img/logo1.svg" alt="">
+                    </a>
+                    <ul role="menu">
+                        <li role="menuitem"><a href="#about_us" class="mobile-link">Über</a></li>
+                        <li role="menuitem"><a href="#video-guide" class="mobile-link">Video Guide</a></li>
+                        <li role="menuitem"><a href="#schema" class="mobile-link">Konzept</a></li>
+                        <li role="menuitem"><a href="#footer" class="mobile-link">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+                <div class="navBurger hidden" role="navigation" id="navToggle"></div>
+                <nav class="uppercase flex f16 desc-nav">
                         <a class="nav-link scrollto" href="#about_us">Über</a>
                         <a class="nav-link scrollto" href="#video-guide">Video Guide</a>
                         <a class="nav-link scrollto" href="#schema">Konzept</a>
@@ -207,7 +221,7 @@
             <div class="content-margin">
                 <h2 class="uppercase  text-center f25">TimeKeeper Concept</h2>
                 <div class="schema-mobile">
-                    <img src="img/schema/system-work-scheme-mobile+.svg" alt="" class="schema-mobile-img">
+                    <img src="img/schema/system-work-scheme++.svg" alt="" class="schema-mobile-img">
                 </div>
                 <div class="f-g-center">
                     <div class="schema-wrap">
@@ -484,7 +498,14 @@
         }
         new WOW().init();
 
-
+        //MOBILE MENU START
+        $("#navToggle").click(function(){$(this).toggleClass("active"),$(".overlay").toggleClass("open"),$("body").toggleClass("locked")});
+        $(".mobile-link").click(function () {
+            $(".overlay").removeClass("open");
+            $(".navBurger").removeClass("active");
+            $("body").toggleClass("locked");
+        })
+        //MOBILE MENU END
 
     </script>
 </body>
