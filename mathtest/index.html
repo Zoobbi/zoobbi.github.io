@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/1.css">
+
+
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="numb-wrap">
+            <label class="numb_label" for="summ_number">Введите число от 5 до 20</label>
+            <input type="text" id="summ_number" name="summ_number" value="5">
+            <button class="confirm" onclick="setSummNumber()"><img class="confirm" src="img/poke.png" alt=""></button>
+        </div>
+        <div>
+
+        </div>
+        <div class="house-wrap">
+
+        </div>
+        <div class="result-table">
+
+            
+        </div>
+    </div>
+    <script>
+        function setSummNumber() {
+            var summ = document.querySelector('#summ_number');
+           if (summ.value > 4 && summ.value < 21) {
+               renderDiv();
+               var summ_nmb = document.querySelector('.roof_number');
+                summ_nmb.innerHTML = summ.value;
+               getTable(summ.value);
+            } else  {
+                alert('Введите число от 5 до 20');
+            }
+        }
+        function getTable(value) {
+            var number_div = document.querySelector('#number_div');
+            var inputs ='';
+            var condition = [];
+            for (var i = 0; i <= value; i++) {
+                condition[i] = i;
+            }
+            shuffle(condition);
+            for (var i = 0; i <= value; i++) {
+
+                inputs = inputs + '<div> <input readonly class="number_term first" type="text" value="'+ condition[i] +'"><input class="number_term second" type="text" required  value=""><input class="result" type="hidden"value="'+ (value-condition[i]) +'"></div>';
+            }
+            number_div.innerHTML = inputs;
+        }
+
+
+        function checkResults() {
+            var a = document.querySelectorAll('.first');
+            var b = document.querySelectorAll('.second');
+            var c = document.querySelectorAll('.result');
+            var count = 0;
+            var condition = [];
+            var answer = [];
+            var result = [];
+
+            for (var i = 0; i < c.length; i++) {
+                condition.push(a[i].value);
+                answer.push(b[i].value);
+                result.push(c[i].value);
+             }
+            for(var i = 0; i < c.length; i++) {
+                if (answer[i] == result[i]) {
+                    b[i].style.backgroundColor = 'green';
+                    count++
+                } else  {
+                    b[i].style.backgroundColor = 'red';
+                }
+            }
+            showResult(count);
+            console.log('you result = ' + count +  ' from ' + c.length);
+        }
+
+        function shuffle(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        function renderDiv() {
+            var divWrap = document.querySelector('.house-wrap');
+            divWrap.innerHTML =
+                '<div class="house">\n' +
+                '                <div class="roof_number"></div>\n' +
+                '                <div  class="house_1">\n' +
+                '                    <div id="number_div">\n' +
+                '                    </div>\n' +
+                '                    <button class="sub-form confirm" onclick="checkResults()"><img class="confirm" src="img/bird.png" alt=""></button>\n' +
+                '                </div>\n' +
+                '            </div>';
+        }
+
+
+        function showResult(count) {
+
+            var result_table = document.querySelector('.result-table');
+            var all = document.querySelector('#summ_number');
+            var cacunes_true = '';
+            var cacunes_false = '';
+
+            for (var i = 0; i < count; i++) {
+                cacunes_true +=  '<div class="cacuna"><img class="cacuna-img" src="img/cacune.png" alt=""></div>';
+            }
+            for (var i = 0; i < (all.value - count); i++) {
+                cacunes_false +=  '<div class="cacuna"><img class="cacuna-img grayscale" src="img/cacune.png" alt=""></div>';
+            }
+            result_table.innerHTML = '' +
+                '  <h2>Ваш результат ' + count+ ' какуны из ' + all.value +'</h2>\n' +
+                '  <div class="cacuna-wrap">' + cacunes_true + cacunes_false +'</div>';
+        }
+
+    </script>
+</body>
+</html>
