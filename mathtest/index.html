@@ -80,7 +80,7 @@
                 }
             }
             showResult(count);
-            console.log('you result = ' + count +  ' from ' + c.length);
+            //console.log('you result = ' + count +  ' from ' + c.length);
         }
 
         function shuffle(array) {
@@ -113,12 +113,36 @@
             for (var i = 0; i < count; i++) {
                 cacunes_true +=  '<div class="cacuna"><img class="cacuna-img" src="img/cacune.png" alt=""></div>';
             }
-            for (var i = 0; i < (all.value - count); i++) {
+            for (var i = 0; i < (Number(all.value)+1 - count); i++) {
                 cacunes_false +=  '<div class="cacuna"><img class="cacuna-img grayscale" src="img/cacune.png" alt=""></div>';
             }
             result_table.innerHTML = '' +
-                '  <h2>Ваш результат ' + count+ ' какуны из ' + all.value +'</h2>\n' +
-                '  <div class="cacuna-wrap">' + cacunes_true + cacunes_false +'</div>';
+                '  <h2>Ваш результат ' + count+ ' какуны из ' + (Number(all.value)+1) +'</h2>\n' +
+                '<div class="res">'+ resultText(count,Number(all.value)+1)+'</div>'+
+                '<div class="cacuna-wrap">' + cacunes_true + cacunes_false +'</div>';
+            ;
+
+            console.log( resultText(count,Number(all.value)+1));
+        }
+
+        function resultText(count,all) {
+            var res = count / all * 100;
+            console.log(res);
+            var text = '';
+            if(res <= 20) {
+                text = 'Постарайся в следующий раз!';
+            } else if(res > 20 && res <=40) {
+                text = 'Ниже среднего, старайся!';
+            } else if(res > 40 && res <=60) {
+                text = 'Средне, а можно отлично, старайся!';
+            } else if(res > 60 && res <=80) {
+                text = 'Выше среднего ниже хорошего, старайся!';
+            } else if(res > 60 && res <=80) {
+                text = 'Хорошо, старайся!';
+            } else {
+                text = 'Отлично, великолепно, какунно!';
+            }
+            return text;
         }
 
     </script>
