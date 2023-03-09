@@ -1,0 +1,44 @@
+/*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}*/
+
+/*
+#canvas {
+    width: 350px;
+    height: 550px;
+    border: 3px solid black;
+
+   !* background-image: url('./setka.png');*!
+}
+*/
+
+.hidden {
+    background-color: red;
+}
+
+.a {
+    overflow-x: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.b {
+    min-width: 20%;
+    height: 20px;
+
+    background-color: darkgoldenrod;
+}
+
+.b:first-child {
+    background-color: yellow;
+    position: sticky;
+    left: 0;
+}
+
+.b:nth-child(2n) {
+     background-color: green;
+ }
