@@ -42,3 +42,50 @@
 .b:nth-child(2n) {
      background-color: green;
  }
+
+.wrap {
+    overflow-x: auto;
+    width: 80%;
+    margin: 0 auto;
+}
+
+table {
+    background-color: wheat;
+    box-sizing: border-box;
+    border-spacing: 0;
+    color:  white;
+    width: 100%;
+}
+
+table thead tr {
+    background-color: green;
+}
+
+table th:first-child {
+    position: sticky;
+    left: 0;
+}
+
+table tr {
+    background-color: darkcyan;
+}
+
+table tr:nth-child(2n) {
+    background-color: green;
+}
+
+table th, table td {
+    padding: 10px 16px;
+}
+
+table th:first-child {
+    position: sticky;
+    left: 0;
+    background-color: blue;
+}
+
+table td:first-child {
+    position: sticky;
+    left: 0;
+    background-color: blue;
+}
